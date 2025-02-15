@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable and Movable Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="unique-favicon.png">
+</head>
+<body>
+    <div id="chatbot">
+        <div id="chat-header">
+            <h2>ChatBot</h2>
+        </div>
+        <div id="chat-window">
+            <div class="chat-message bot">Hi there! How can I help you today?</div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+            <button type="submit">Send</button>
+        </form>
+        <div id="resize-handle"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

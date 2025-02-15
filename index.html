@@ -3,24 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resizable and Movable Chatbot</title>
+    <title>Enhanced Chatbot</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="unique-favicon.png">
 </head>
 <body>
     <div id="chatbot">
         <div id="chat-header">
-            <h2>ChatBot</h2>
+            <div class="header-title">ChatBot</div>
+            <div class="header-controls">
+                <button class="control-button" id="minimize-btn">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="control-button" id="theme-btn">
+                    <i class="fas fa-paint-brush"></i>
+                </button>
+                <button class="control-button" id="clear-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
         </div>
         <div id="chat-window">
-            <div class="chat-message bot">Hi there! How can I help you today?</div>
+            <div class="chat-message bot">
+                Hi there! How can I help you today?
+                <div class="timestamp">Just now</div>
+            </div>
         </div>
-        <form id="chat-form">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-            <button type="submit">Send</button>
-        </form>
+        <div id="chat-form">
+            <div class="typing-indicator">Bot is typing...</div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+                <button type="button" id="emoji-btn">
+                    <i class="far fa-smile"></i>
+                </button>
+                <button type="submit" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="emoji-picker">
+            <div class="emoji-grid">
+                <!-- Emojis will be populated by JavaScript -->
+            </div>
+        </div>
         <div id="resize-handle"></div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+

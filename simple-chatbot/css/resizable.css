@@ -1,0 +1,22 @@
+/***********************************************
+ * Styles for the resizable functionality of the chatbot
+ ***********************************************/
+
+.chatbot {
+    position: relative; /* Ensure the chatbot is positioned for resizing */
+    overflow: hidden; /* Hide overflow to maintain clean edges */
+}
+
+.resize-handle {
+    width: 10px; /* Width of the resize handle */
+    height: 10px; /* Height of the resize handle */
+    background-color: transparent; /* Make the handle transparent */
+    position: absolute; /* Position it absolutely within the chatbot */
+    bottom: 0; /* Align to the bottom */
+    right: 0; /* Align to the right */
+    cursor: nwse-resize; /* Change cursor to indicate resizing */
+}
+
+.resize-handle:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly visible on hover */
+}

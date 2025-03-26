@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/resizable.css">
+</head>
+<body>
+    <div id="chatbot" class="chatbot">
+        <div id="header" class="chatbot-header">
+            <h2>Chatbot</h2>
+            <button id="minimize-btn" class="control-btn">
+                <img src="images/icons/minimize.svg" alt="Minimize">
+            </button>
+            <button id="expand-btn" class="control-btn">
+                <img src="images/icons/expand.svg" alt="Expand">
+            </button>
+        </div>
+        <div id="chat-window" class="chat-window"></div>
+        <div id="user-input-area" class="user-input-area">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+            <button id="emoji-btn">😊</button>
+        </div>
+        <div class="typing-indicator"></div>
+        <div class="emoji-picker">
+            <div class="emoji-search">
+                <input type="text" placeholder="Search emojis...">
+            </div>
+            <div class="emoji-grid"></div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/draggable.js"></script>
+    <script src="js/resizable.js"></script>
+    <script src="js/chatbot-core.js"></script>
+</body>
+</html>

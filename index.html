@@ -7,49 +7,174 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="unique-favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="chatbot">
         <div id="chat-header">
-            <div class="header-title">ChatBot</div>
+            <div class="header-left">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="header-info">
+                    <div class="header-title">ChatBot</div>
+                    <div class="status-indicator online">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+            </div>
             <div class="header-controls">
-                <button class="control-button" id="minimize-btn">
-                    <i class="fas fa-minus"></i>
+                <button class="control-button" id="help-btn" title="Help">
+                    <i class="fas fa-question-circle"></i>
                 </button>
-                <button class="control-button" id="theme-btn">
+                <button class="control-button" id="settings-btn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-button" id="theme-btn" title="Change Theme">
                     <i class="fas fa-paint-brush"></i>
                 </button>
-                <button class="control-button" id="clear-btn">
+                <button class="control-button" id="clear-btn" title="Clear Chat">
                     <i class="fas fa-trash"></i>
                 </button>
+                <button class="control-button" id="minimize-btn" title="Minimize">
+                    <i class="fas fa-minus"></i>
+                </button>
             </div>
         </div>
+        
         <div id="chat-window">
             <div class="chat-message bot">
-                Hi there! How can I help you today?
-                <div class="timestamp">Just now</div>
+                <div class="message-content">
+                    <p>Hi there! How can I help you today?</p>
+                    <div class="quick-replies">
+                        <button class="quick-reply-btn">Get Started</button>
+                        <button class="quick-reply-btn">Features</button>
+                        <button class="quick-reply-btn">Help</button>
+                    </div>
+                </div>
+                <div class="message-info">
+                    <div class="timestamp">Just now</div>
+                    <div class="message-actions">
+                        <button class="action-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                        <button class="action-btn" title="Read Aloud"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
             </div>
         </div>
+        
         <div id="chat-form">
-            <div class="typing-indicator">Bot is typing...</div>
+            <div class="typing-indicator">Bot is typing<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
             <div class="input-container">
+                <button type="button" id="attachment-btn" title="Add Attachment">
+                    <i class="fas fa-paperclip"></i>
+                </button>
                 <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-                <button type="button" id="emoji-btn">
+                <div class="character-count">0/500</div>
+                <button type="button" id="emoji-btn" title="Add Emoji">
                     <i class="far fa-smile"></i>
                 </button>
-                <button type="submit" id="send-btn">
+                <button type="button" id="voice-btn" title="Voice Input">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button type="submit" id="send-btn" title="Send">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
+        
         <div class="emoji-picker">
+            <div class="emoji-categories">
+                <button class="emoji-category active" data-category="smileys"><i class="far fa-smile"></i></button>
+                <button class="emoji-category" data-category="animals"><i class="fas fa-paw"></i></button>
+                <button class="emoji-category" data-category="food"><i class="fas fa-pizza-slice"></i></button>
+                <button class="emoji-category" data-category="travel"><i class="fas fa-plane"></i></button>
+                <button class="emoji-category" data-category="activities"><i class="fas fa-futbol"></i></button>
+            </div>
+            <div class="emoji-search">
+                <input type="text" placeholder="Search emojis...">
+            </div>
             <div class="emoji-grid">
                 <!-- Emojis will be populated by JavaScript -->
             </div>
         </div>
-        <div id="resize-handle"></div>
+        
+        <div id="settings-panel" class="panel">
+            <div class="panel-header">
+                <h3>Settings</h3>
+                <button class="close-panel"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="setting-group">
+                    <h4>Theme</h4>
+                    <div class="theme-options">
+                        <button class="theme-option" data-theme="light">Light</button>
+                        <button class="theme-option" data-theme="dark">Dark</button>
+                        <button class="theme-option" data-theme="blue">Blue</button>
+                        <button class="theme-option" data-theme="purple">Purple</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h4>Text Size</h4>
+                    <div class="range-slider">
+                        <input type="range" min="12" max="20" value="14" class="slider" id="text-size">
+                        <span class="slider-value">14px</span>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h4>Language</h4>
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <h4>Sound</h4>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Enable sound effects</span>
+                    </label>
+                </div>
+                <button class="save-settings-btn">Save Settings</button>
+            </div>
+        </div>
+        
+        <div id="help-panel" class="panel">
+            <div class="panel-header">
+                <h3>Help & Commands</h3>
+                <button class="close-panel"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="help-section">
+                    <h4>Available Commands</h4>
+                    <ul class="command-list">
+                        <li><code>/help</code> - Show this help panel</li>
+                        <li><code>/clear</code> - Clear conversation</li>
+                        <li><code>/time</code> - Show current time</li>
+                        <li><code>/save</code> - Save conversation</li>
+                        <li><code>/restart</code> - Restart conversation</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h4>Keyboard Shortcuts</h4>
+                    <ul class="shortcut-list">
+                        <li><kbd>Enter</kbd> - Send message</li>
+                        <li><kbd>Shift</kbd> + <kbd>Enter</kbd> - New line</li>
+                        <li><kbd>Esc</kbd> - Close panels</li>
+                        <li><kbd>Ctrl</kbd> + <kbd>B</kbd> - Toggle theme</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="resize-handle">
+            <i class="fas fa-grip-lines"></i>
+        </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
-

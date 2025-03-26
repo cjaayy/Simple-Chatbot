@@ -1,0 +1,58 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --border-color: #ccc;
+}
+
+.light-theme {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --border-color: #ccc;
+}
+
+.dark-theme {
+    --primary-color: #333;
+    --secondary-color: #555;
+    --text-color: #f1f1f1;
+    --border-color: #777;
+}
+
+.blue-theme {
+    --primary-color: #2196F3;
+    --secondary-color: #e3f2fd;
+    --text-color: #0d47a1;
+    --border-color: #90caf9;
+}
+
+.red-theme {
+    --primary-color: #f44336;
+    --secondary-color: #ffebee;
+    --text-color: #b71c1c;
+    --border-color: #ef5350;
+}
+
+.chatbot {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.chat-message {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chatbot-header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
